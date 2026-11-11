@@ -1,0 +1,76 @@
+# RiskOcc Stage 4 safety evaluation protocol (v1).
+# Defines class semantics, distance bins, blocking slab, valid region and
+# default operating point used by tools/streaming_safety_evaluator.py.
+#
+# Notes
+# -----
+# * `class_names` follow the Occ3D-nuScenes default ordering; `free_id=17`
+#   matches FlashOCC's BEVOCCHead2D head.
+# * Class groups (dynamic/vulnerable) are given by name; the evaluator resolves
+#   them to class ids via `class_names`.
+
+num_classes: 18
+free_id: 17
+occupied_ids: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+
+class_names:
+  - others                # 0
+  - barrier               # 1
+  - bicycle               # 2
+  - bus                   # 3
+  - car                   # 4
+  - construction_vehicle  # 5
+  - motorcycle            # 6
+  - pedestrian            # 7
+  - traffic_cone          # 8
+  - trailer               # 9
+  - truck                 # 10
+  - driveable_surface     # 11
+  - other_flat            # 12
+  - sidewalk              # 13
+  - terrain               # 14
+  - manmade               # 15
+  - vegetation            # 16
+  - free                  # 17
+
+# BEV distance bins (meters).
+d_near: 20.0
+distance_bins:
+  near: [0.0, 20.0]
+  mid:  [20.0, 30.0]
+  far:  [30.0, 1000.0]
+
+# Class groups: dynamic = movable agents; vulnerable = VRUs.
+dynamic_classes:
+  - car
+  - truck
+  - trailer
+  - bus
+  - construction_vehicle
+  - motorcycle
+  - bicycle
+  - pedestrian
+vulnerable_classes:
+  - pedestrian
+  - bicycle
+  - motorcycle
+
+# Free-space blocking slab (planar height band above the ground, meters).
+z_plan: [-0.5, 2.0]
+d_block: 20.0
+
+# Voxel grid geometry (must match the head's output grid).
+pc_range: [-40.0, -40.0, -1.0, 40.0, 40.0, 5.4]
+voxel_size: 0.4
+
+# Valid region. `camera_mask` restricts every metric to mask_camera so that the
+# protocol's mIoU is directly comparable to tools/test.py.
+valid_region: camera_mask
+
+# Default operating point: argmax over the full 18-way softmax. Matches the
+# official decoder in BEVOCCHead2D.get_occ / get_occ_gpu.
+default_operating_point: argmax
+
+# Optional per-bin coarse histograms over (p_occ, s_v). Set to a positive int
+# to enable; the evaluator does NOT save per-voxel arrays.
+prob_histogram_bins: 40

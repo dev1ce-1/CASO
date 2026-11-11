@@ -1,0 +1,90 @@
+{
+  "B": 10000,
+  "E6-S_minus_E1-S": {
+    "binary_occupied_iou": {
+      "ci95": [
+        0.0016248393148709025,
+        0.003301711566688684
+      ],
+      "crosses_zero": false,
+      "point_delta": 0.0024910425592639396,
+      "status": "PASS"
+    },
+    "miou_18": {
+      "ci95": [
+        0.0022015960964354383,
+        0.004925548896765121
+      ],
+      "crosses_zero": false,
+      "point_delta": 0.0036521154519580934,
+      "status": "PASS"
+    },
+    "miou_occupied_17": {
+      "ci95": [
+        0.0029795080393813875,
+        0.005782940191780884
+      ],
+      "crosses_zero": false,
+      "point_delta": 0.004477403374765793,
+      "status": "PASS"
+    },
+    "occupied_auprc": {
+      "ci95": [
+        0.01741837253700021,
+        0.019687338333722538
+      ],
+      "crosses_zero": false,
+      "point_delta": 0.018540597294773142,
+      "status": "PASS"
+    },
+    "occupied_recall_at_occ3d_fp_0p10": {
+      "ci95": [
+        0.007440434166689161,
+        0.010597445835212573
+      ],
+      "crosses_zero": false,
+      "point_delta": 0.009014947666660666,
+      "status": "PASS"
+    },
+    "report_fp_at_occ3d_threshold": {
+      "ci95": [
+        0.004473330619139693,
+        0.007467537520605018
+      ],
+      "crosses_zero": false,
+      "point_delta": 0.005901528323062288,
+      "status": "PASS"
+    }
+  },
+  "auxiliary_surroundocc_internal_tune_thresholds": {
+    "E1-S_seed0": 200,
+    "E1-S_seed1": 200,
+    "E6-S_seed0": 200,
+    "E6-S_seed1": 200
+  },
+  "bootstrap_indices_sha256": "38f641dff5604c795628316e01abf128f023daff742e1d3c579c4dcc35dc76d7",
+  "bootstrap_seed": 20260715,
+  "group_point_estimates": {
+    "E1-S": {
+      "binary_occupied_iou": 0.10873331749479206,
+      "miou_18": 0.12018496506641824,
+      "miou_occupied_17": 0.08467510078659073,
+      "occupied_auprc": 0.21622359731202678,
+      "occupied_recall_at_occ3d_fp_0p10": 0.645778677724926,
+      "report_fp_at_occ3d_threshold": 0.2936730739481735
+    },
+    "E6-S": {
+      "binary_occupied_iou": 0.111224360054056,
+      "miou_18": 0.12383708051837633,
+      "miou_occupied_17": 0.08915250416135652,
+      "occupied_auprc": 0.23476419460679993,
+      "occupied_recall_at_occ3d_fp_0p10": 0.6547936253915867,
+      "report_fp_at_occ3d_threshold": 0.2995746022712358
+    }
+  },
+  "main_threshold_policy": "Occ3D canonical tune threshold transferred without retuning",
+  "n_report_scenes": 75,
+  "same_indices_all_models_metrics": true,
+  "sampling_unit": "canonical report scene",
+  "status": "PASS"
+}

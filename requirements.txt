@@ -1,0 +1,3 @@
+# CPU-only verification of packaged statistical evidence.
+# Training dependencies are documented separately in docs/REPRODUCING.md.
+numpy>=1.23.5

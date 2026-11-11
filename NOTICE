@@ -1,0 +1,22 @@
+CASO / RiskOcc companion software
+
+This distribution includes code derived from FlashOCC, BEVDet and MMDetection3D.
+The inherited Apache License 2.0 is provided in LICENSE. Original copyright,
+license and attribution notices in source files and bundled third-party
+utilities are retained and continue to apply.
+
+Upstream projects:
+https://github.com/Yzichen/FlashOCC
+https://github.com/HuangJunJie2017/BEVDet
+https://github.com/open-mmlab/mmdetection3d
+
+Additional bundled utilities retain their own source notices. The root license
+does not override a more specific third-party notice. Dataset access and reuse
+remain subject to the respective nuScenes/Occ3D/SurroundOcc provider terms.
+
+Author-produced statistical evidence and new release documentation:
+Copyright 2026 the CASO manuscript authors.
+Licensed under Creative Commons Attribution 4.0 International:
+https://creativecommons.org/licenses/by/4.0/
+
+See CHANGELOG.md and SOURCE_MANIFEST.json for packaging changes and provenance.
