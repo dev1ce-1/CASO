@@ -1,0 +1,42 @@
+{
+  "title": "CASO: Consequence-Aware Semantic Occupancy Evaluation and RiskOcc Training",
+  "upload_type": "software",
+  "description": "Companion implementation and selected supporting statistics for the manuscript Beyond Accuracy: Consequence-Aware Semantic Occupancy Evaluation and Training for Autonomous Driving. Includes canonical 75/75 scene split, RiskOcc loss/configurations, evaluators and archived evidence for Tables II, III, IV, VII, VIII and IX. Raw datasets, trained checkpoints and complete reproduction packages for Tables I, V and VI are not included. Code: Apache-2.0 with retained third-party notices. Author-produced statistical evidence and new documentation: CC-BY-4.0. This release contains saved evidence, not new experiments. See README.md and docs/AVAILABILITY.md for scope.",
+  "creators": [
+    {
+      "name": "Gao, Honghao"
+    },
+    {
+      "name": "Zhang, Bingli"
+    },
+    {
+      "name": "Jiang, Junzhao"
+    },
+    {
+      "name": "Hu, Weilong"
+    },
+    {
+      "name": "Wang, Yixin"
+    },
+    {
+      "name": "Xia, Xue"
+    }
+  ],
+  "version": "1.0.1",
+  "publication_date": "2026-11-11",
+  "license": "Apache-2.0",
+  "keywords": [
+    "semantic occupancy",
+    "autonomous driving",
+    "consequence-aware evaluation",
+    "RiskOcc",
+    "CASO"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/dev1ce-1/CASO",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

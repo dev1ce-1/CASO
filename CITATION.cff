@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software or its supporting statistics, please cite this release."
+type: software
+title: "CASO: Consequence-Aware Semantic Occupancy Evaluation and RiskOcc Training"
+version: 1.0.1
+date-released: 2026-11-11
+repository-code: "https://github.com/dev1ce-1/CASO"
+license: Apache-2.0
+authors:
+  - family-names: Gao
+    given-names: Honghao
+  - family-names: Zhang
+    given-names: Bingli
+  - family-names: Jiang
+    given-names: Junzhao
+  - family-names: Hu
+    given-names: Weilong
+  - family-names: Wang
+    given-names: Yixin
+  - family-names: Xia
+    given-names: Xue
+abstract: "Companion implementation and selected experimental statistics for Beyond Accuracy: Consequence-Aware Semantic Occupancy Evaluation and Training for Autonomous Driving. Raw datasets, trained checkpoints and complete packages for Tables I, V and VI are not included. Statistical evidence and new documentation use CC-BY-4.0; code retains Apache-2.0 and bundled third-party notices."
+keywords:
+  - semantic occupancy
+  - autonomous driving
+  - consequence-aware evaluation
+  - risk-aware training

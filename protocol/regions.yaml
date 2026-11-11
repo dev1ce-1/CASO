@@ -1,0 +1,34 @@
+# Regional definitions shared by diagnostics and manuscript statistics.
+# Positive and negative samples use the camera-valid ground-truth mask.
+
+frozen: true
+
+regions:
+  far:
+    desc: "far-distance diagnostic region"
+    space: "distance_bin == far"
+    distance_bin: far            # safety_protocol.distance_bins.far = [30, 1000] m
+    params: none                 # 0 free parameters (verbatim reuse)
+
+  near_dynamic:
+    desc: "near-field neighborhood of ground-truth participant occupancy"
+    space: "distance_bin == near  AND  dilate(GT-occupied of dynamic_union)"
+    distance_bin: near           # [0, 20) m
+    class_group: dynamic_union   # dynamic + vulnerable (safety_protocol groups)
+    dilation_voxels: 2           # 0.8 m at 0.4 m voxel  (near-field safety buffer)
+    dilation_connectivity: 3     # 3D 26-neighborhood structuring element
+    # region = (bin==near) & binary_dilation(gt_occ & group in {dynamic,vulnerable})
+
+  boundary:
+    desc: "occupied/free interface shell: isolates separability from aggressiveness"
+    space: "internal_boundary(GT occupied) UNION external_boundary(adjacent free)"
+    connectivity: 1              # 6-neighborhood, 1-voxel minimal shell
+    # internal = occ & ~binary_erosion(occ)      (positives, GT occupied)
+    # external = free & binary_dilation(occ)     (negatives, GT free)
+    # occ/free taken over camera_mask-valid voxels
+
+external_rationale: |
+  Fixed diagnostic regions are defined by distance, participant labels and
+  occupied/free interfaces. The near-participant region uses two iterations
+  of 26-connected dilation on the 0.4 m grid. These voxel neighborhoods define
+  evaluation regions and do not certify physical collision clearance.
